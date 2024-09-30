@@ -22,7 +22,7 @@
         <label for="Dependents">Dependents (1 for Yes, 0 for No):</label>
         <input type="number" id="Dependents" name="Dependents" required><br>
 
-        <label for="tenure">Tenure:</label>
+        <label for="tenure">Tenure(in months):</label>
         <input type="number" id="tenure" name="tenure" required><br>
 
         <label for="PhoneService">Phone Service (1 for Yes, 0 for No):</label>
@@ -31,7 +31,7 @@
         <label for="MultipleLines">Multiple Lines (1 for Yes, 0 for No):</label>
         <input type="number" id="MultipleLines" name="MultipleLines" required><br>
 
-        <label for="InternetService">Internet Service (1 for Yes, 0 for No):</label>
+        <label for="InternetService">Internet Service (0 for no, 1 for DSL, 2 for fiber optic):</label>
         <input type="number" id="InternetService" name="InternetService" required><br>
 
         <label for="OnlineSecurity">Online Security (1 for Yes, 0 for No):</label>
@@ -58,7 +58,7 @@
         <label for="PaperlessBilling">Paperless Billing (1 for Yes, 0 for No):</label>
         <input type="number" id="PaperlessBilling" name="PaperlessBilling" required><br>
 
-        <label for="PaymentMethod">Payment Method (1 for Yes, 0 for No):</label>
+        <label for="PaymentMethod">Payment Method (Electronic check:3, Mailed check:2, Bank transfer (automatic):1, Credit card (automatic):0):</label>
         <input type="number" id="PaymentMethod" name="PaymentMethod" required><br>
 
         <label for="MonthlyCharges">Monthly Charges:</label>
@@ -70,7 +70,7 @@
         <label for="HasInternet">Has Internet (1 for Yes, 0 for No):</label>
         <input type="number" id="HasInternet" name="HasInternet" required><br>
 
-        <label for="TotalActiveServices">Total Active Services:</label>
+        <label for="TotalActiveServices">Total Active Services(in between 0 to 6):</label>
         <input type="number" id="TotalActiveServices" name="TotalActiveServices" required><br>
 
         <input type="submit" value="Predict">

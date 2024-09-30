@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 # Load the saved model and scaler using joblib
 model = joblib.load('model.pkl')
+scaler = joblib.load('scalar.pkl')
 
 # Selected features for the model
 selected_features = [
@@ -56,6 +57,8 @@ def predict():
         
         # Create a DataFrame from input data
         df = pd.DataFrame(input_data)
+
+        df[['tenure', 'MonthlyCharges', 'TotalCharges', 'AverageMonthlyCharge']] = scaler.fit_transform(df[['tenure', 'MonthlyCharges', 'TotalCharges', 'AverageMonthlyCharge']])
         
         # Model prediction
         prediction = model.predict(df)
