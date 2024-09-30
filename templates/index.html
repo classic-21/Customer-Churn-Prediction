@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Customer Churn Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="gender">Gender (1 for male, 0 for female):</label>
+        <input type="number" id="gender" name="gender" required><br>
+
+        <label for="SeniorCitizen">Senior Citizen (1 for Yes, 0 for No):</label>
+        <input type="number" id="SeniorCitizen" name="SeniorCitizen" required><br>
+
+        <label for="Partner">Partner (1 for Yes, 0 for No):</label>
+        <input type="number" id="Partner" name="Partner" required><br>
+
+        <label for="Dependents">Dependents (1 for Yes, 0 for No):</label>
+        <input type="number" id="Dependents" name="Dependents" required><br>
+
+        <label for="tenure">Tenure:</label>
+        <input type="number" id="tenure" name="tenure" required><br>
+
+        <label for="PhoneService">Phone Service (1 for Yes, 0 for No):</label>
+        <input type="number" id="PhoneService" name="PhoneService" required><br>
+
+        <label for="MultipleLines">Multiple Lines (1 for Yes, 0 for No):</label>
+        <input type="number" id="MultipleLines" name="MultipleLines" required><br>
+
+        <label for="InternetService">Internet Service (1 for Yes, 0 for No):</label>
+        <input type="number" id="InternetService" name="InternetService" required><br>
+
+        <label for="OnlineSecurity">Online Security (1 for Yes, 0 for No):</label>
+        <input type="number" id="OnlineSecurity" name="OnlineSecurity" required><br>
+
+        <label for="OnlineBackup">Online Backup (1 for Yes, 0 for No):</label>
+        <input type="number" id="OnlineBackup" name="OnlineBackup" required><br>
+
+        <label for="DeviceProtection">Device Protection (1 for Yes, 0 for No):</label>
+        <input type="number" id="DeviceProtection" name="DeviceProtection" required><br>
+
+        <label for="TechSupport">Tech Support (1 for Yes, 0 for No):</label>
+        <input type="number" id="TechSupport" name="TechSupport" required><br>
+
+        <label for="StreamingTV">Streaming TV (1 for Yes, 0 for No):</label>
+        <input type="number" id="StreamingTV" name="StreamingTV" required><br>
+
+        <label for="StreamingMovies">Streaming Movies (1 for Yes, 0 for No):</label>
+        <input type="number" id="StreamingMovies" name="StreamingMovies" required><br>
+
+        <label for="Contract">Contract (1 for Yes, 0 for No):</label>
+        <input type="number" id="Contract" name="Contract" required><br>
+
+        <label for="PaperlessBilling">Paperless Billing (1 for Yes, 0 for No):</label>
+        <input type="number" id="PaperlessBilling" name="PaperlessBilling" required><br>
+
+        <label for="PaymentMethod">Payment Method (1 for Yes, 0 for No):</label>
+        <input type="number" id="PaymentMethod" name="PaymentMethod" required><br>
+
+        <label for="MonthlyCharges">Monthly Charges:</label>
+        <input type="number" id="MonthlyCharges" name="MonthlyCharges" required><br>
+
+        <label for="TotalCharges">Total Charges:</label>
+        <input type="number" id="TotalCharges" name="TotalCharges" required><br>
+
+        <label for="HasInternet">Has Internet (1 for Yes, 0 for No):</label>
+        <input type="number" id="HasInternet" name="HasInternet" required><br>
+
+        <label for="TotalActiveServices">Total Active Services:</label>
+        <input type="number" id="TotalActiveServices" name="TotalActiveServices" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+
+    {% if error %}
+        <h2>Error: {{ error }}</h2>
+    {% endif %}
+</body>
+</html>
