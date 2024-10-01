@@ -58,7 +58,7 @@ def predict():
         # Create a DataFrame from input data
         df = pd.DataFrame(input_data)
 
-        df[['tenure', 'MonthlyCharges', 'TotalCharges', 'AverageMonthlyCharge']] = scaler.fit_transform(df[['tenure', 'MonthlyCharges', 'TotalCharges', 'AverageMonthlyCharge']])
+        df[['tenure', 'MonthlyCharges', 'TotalCharges']] = scaler.fit_transform(df[['tenure', 'MonthlyCharges', 'TotalCharges']])
         
         # Model prediction
         prediction = model.predict(df)
